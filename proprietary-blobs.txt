@@ -19,7 +19,6 @@
 
 -app/datastatusnotification/datastatusnotification.apk
 -app/HiddenMenu/HiddenMenu.apk
--app/ims/ims.apk
 -app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/RCSBootstraputil/RCSBootstraputil.apk
 -app/RcsImsBootstraputil/RcsImsBootstraputil.apk
