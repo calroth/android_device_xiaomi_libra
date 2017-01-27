@@ -623,10 +623,7 @@ vendor/lib64/libxml.so
 
 # Perf
 bin/energy-awareness
-bin/iop
 bin/msm_irqbalance
-lib/libqti-iop.so
-lib64/libqti-iop.so
 vendor/bin/perfd
 vendor/etc/perf-profile0.conf
 vendor/etc/perf-profile1.conf
@@ -639,9 +636,7 @@ vendor/lib64/libthermalclient.so
 
 # Thermal
 vendor/bin/thermal-engine
-vendor/lib/libqti-iop-client.so
 vendor/lib/libqti-perfd-client.so
-vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libthermalioctl.so
 
