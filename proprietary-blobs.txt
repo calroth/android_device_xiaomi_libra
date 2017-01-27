@@ -17,7 +17,6 @@
 #
 # <src relative to root of extracted filesystem>:<dst relative to system>
 
--app/atfwd/atfwd.apk
 -app/datastatusnotification/datastatusnotification.apk
 -app/HiddenMenu/HiddenMenu.apk
 -app/ims/ims.apk
@@ -39,7 +38,6 @@
 -framework/qcrilhook.jar
 -framework/rcsimssettings.jar
 -framework/rcsservice.jar
-bin/ATFWD-daemon
 bin/btnvtool
 bin/cnd
 bin/cnss-daemon
