@@ -1,0 +1,14 @@
+# Proprietary firmware files as of MIUI V8.1.3.0
+bk2.img
+BTFM.bin
+hyp.mbn
+logo.img
+NON-HLOS.bin
+pmic.mbn
+rpm.mbn
+
+# The following files SHOULD NOT be flashed in general.
+## emmc_appsboot.mbn
+## sbl1.mbn
+## sdi.mbn
+## tz.mbn

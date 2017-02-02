@@ -1,6 +1,7 @@
 #!/bin/bash -e
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,10 +44,13 @@ if [ $# -eq 0 ]; then
 else
   if [ $# -eq 1 ]; then
      SRC=$1
+  elif [ $# -eq 2 ]; then
+      SRC=$1
+      RADIO_SRC=$2
   else
      echo "$0: bad number of arguments"
      echo ""
-     echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
+     echo "usage: $0 [PATH_TO_EXPANDED_ROM] [PATH_TO_RADIO_FOLDER]"
      echo ""
      echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
      echo "the device using adb pull."
@@ -58,5 +62,8 @@ setup_vendor "$DEVICE" "$VENDOR" "$REPO_ROOT"
 
 # Extract the device specific files that always occur in /system
 extract "$MY_DIR/proprietary-blobs.txt" "$SRC"
+if [ -n "$RADIO_SRC" ]; then
+    extract_firmware "$MY_DIR"/proprietary-firmware.txt "$RADIO_SRC"
+fi
 
 "$MY_DIR"/setup-makefiles.sh

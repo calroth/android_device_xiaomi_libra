@@ -48,5 +48,8 @@ write_headers
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-blobs.txt
 
+# Append the calls to firmware images
+append_firmware_calls_to_makefiles
+
 # We are done!
 write_footers

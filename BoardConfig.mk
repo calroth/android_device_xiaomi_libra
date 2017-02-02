@@ -175,8 +175,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.libra
 
 TARGET_RECOVERY_FSTAB = device/xiaomi/libra/fstab.libra
+TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/libra
+TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_HAL_STATIC_LIBRARIES += libhealthd.qcom
