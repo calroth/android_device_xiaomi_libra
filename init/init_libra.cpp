@@ -1,5 +1,6 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
+   Copyright (c) 2017, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -123,14 +124,14 @@ static void init_target_properties()
         property_set("ro.build.product", "libra");
         property_set("ro.product.model", "Mi-4c");
         property_set("ro.product.device", "libra");
-        property_set("ro.build.description", "libra-user 5.1.1 LMY47V V7.5.3.0.LXKCNDE release-keys");
-        property_set("ro.build.fingerprint", "Xiaomi/libra/libra:5.1.1/LMY47V/V7.5.3.0.LXKCNDE:user/release-keys");
+        property_set("ro.build.description", "libra-user 5.1.1 LMY47V V8.1.3.0.LXKCNDI release-keys");
+        property_set("ro.build.fingerprint", "Xiaomi/libra/libra:5.1.1/LMY47V/V8.1.3.0.LXKCNDI:user/release-keys");
     } else {
         property_set("ro.build.product", "aqua");
         property_set("ro.product.model", "Mi-4s");
         property_set("ro.product.device", "aqua");
-        property_set("ro.build.description", "aqua-user 5.1.1 LMY47V V7.5.3.0.LAJCNDE release-keys");
-        property_set("ro.build.fingerprint", "Xiaomi/aqua/aqua:5.1.1/LMY47V/V7.5.3.0.LAJCNDE:user/release-keys");
+        property_set("ro.build.description", "aqua-user 5.1.1 LMY47V V8.1.3.0.LAJCNDI release-keys");
+        property_set("ro.build.fingerprint", "Xiaomi/aqua/aqua:5.1.1/LMY47V/V8.1.3.0.LAJCNDI:user/release-keys");
     }
 }
 
