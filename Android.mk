@@ -32,7 +32,7 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 ADSP_IMAGES := \
     adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 adsp.b07 \
     adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 adsp.b14 adsp.b15 \
-    adsp.mdn adsp.mdt
+    adsp.mbn adsp.mdt
 
 ADSP_SYMLINKS := $(addprefix $(TARGET_OUT)/vendor/firmware/,$(notdir $(ADSP_IMAGES)))
 $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
@@ -57,7 +57,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(CMN_SYMLINKS)
 
 CPE_IMAGES := \
     cpe.b02 cpe.b04 cpe.b05 cpe.b06 cpe.b08 cpe.b10 cpe.b11 cpe.b12 cpe.b14 \
-    cpe.b16 cpe.b18 cpe.b20 cpe.b21 cpe.mdn cpe.mdt
+    cpe.b16 cpe.b18 cpe.b20 cpe.b21 cpe.mbn cpe.mdt
 
 CPE_SYMLINKS := $(addprefix $(TARGET_OUT)/vendor/firmware/,$(notdir $(CPE_IMAGES)))
 $(CPE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
@@ -96,7 +96,7 @@ $(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(MODEM_SYMLINKS)
 
 BT_IMAGES := \
-    btfw30.tlv btnv30.bin btfw32.tlv btnv32.bin
+    btfw32.tlv btnv32.bin
 
 BT_SYMLINKS := $(addprefix $(TARGET_OUT)/vendor/firmware/,$(notdir $(BT_IMAGES)))
 $(BT_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
