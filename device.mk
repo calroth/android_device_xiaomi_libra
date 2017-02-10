@@ -19,6 +19,18 @@
 #
 # Everything in this directory will become public
 
+# If we've manually added "gatekeeper.msm8992.so" binaries (e.g. from
+# a MIUI Android N release) then add these to the build too. (These files
+# didn't exist with the Android L vendor blobs.)
+ifneq (,$(wildcard vendor/xiaomi/libra/proprietary/vendor/lib/hw/gatekeeper.msm8992.so))
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/libra/proprietary/vendor/lib/hw/gatekeeper.msm8992.so:system/vendor/lib/hw/gatekeeper.msm8992.so
+endif
+ifneq (,$(wildcard vendor/xiaomi/libra/proprietary/vendor/lib64/hw/gatekeeper.msm8992.so))
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/libra/proprietary/vendor/lib64/hw/gatekeeper.msm8992.so:system/vendor/lib64/hw/gatekeeper.msm8992.so
+endif
+
 PRODUCT_COPY_FILES += \
     device/xiaomi/libra/init.libra.rc:root/init.libra.rc \
     device/xiaomi/libra/init.aqua.rc:root/init.aqua.rc \
