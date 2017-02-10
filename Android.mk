@@ -148,7 +148,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(DM_SYMLINKS)
 $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld ; \
 	ln -sf /system/etc/wifi/WCNSS_qcom_cfg.ini \
 		$(TARGET_OUT_ETC)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini ; \
-	ln -sf /data/misc/wifi/wlan_mac.bin \
+	ln -sf /persist/wlan_mac.bin \
 		$(TARGET_OUT_ETC)/firmware/wlan/qca_cld/wlan_mac.bin)
 
 # For creating rfs symbolic link in system partition

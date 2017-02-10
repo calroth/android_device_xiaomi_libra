@@ -21,7 +21,7 @@ extern int qmi_nv_read_bd_addr(unsigned char** addr);
 
 int main() {
     unsigned char *buf = NULL; int i = -1;
-    FILE *f = fopen("/data/misc/wifi/wlan_mac.bin", "w");
+    FILE *f = fopen("/persist/wlan_mac.bin", "w");
     if (f != NULL) {
         i = qmi_nv_read_wlan_mac(&buf);
         if (i == 0) {
@@ -39,11 +39,11 @@ int main() {
         }
         fclose(f);
     } else {
-        printf("Error opening /data/misc/wifi/wlan_mac.bin\n");
+        printf("Error opening /persist/wlan_mac.bin\n");
     }
 
     buf = NULL, i = -1;
-    f = fopen("/data/misc/bluetooth/bdaddr.txt", "w");
+    f = fopen("/persist/bdaddr.txt", "w");
     if (f != NULL) {
         i = qmi_nv_read_bd_addr(&buf);
         if (i == 0) {
@@ -54,7 +54,7 @@ int main() {
         }
         fclose(f);
     } else {
-        printf("Error opening /data/misc/bluetooth/bdaddr.txt\n");
+        printf("Error opening /persist/bdaddr.txt\n");
     }
 
     return 0;
