@@ -20,6 +20,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := xiaomi_hwaddrs
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := get_xiaomi_mac.c
-LOCAL_SHARED_LIBRARIES := libc libqminvapi
+LOCAL_SHARED_LIBRARIES := libc libqminvapi liblog
 LOCAL_PRELINK_MODULE := false
 include $(BUILD_EXECUTABLE)

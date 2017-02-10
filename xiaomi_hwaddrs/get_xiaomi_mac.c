@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+#define LOG_TAG "xiaomi_hwaddrs"
+
+#include <utils/Log.h>
 #include <stdio.h>
 
 extern int qmi_nv_read_wlan_mac(unsigned char** mac);
@@ -35,11 +38,11 @@ int main() {
             fprintf(f, "Intf3MacAddress=%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx\nEND\n",
                     buf[0], buf[1], buf[2], buf[3], buf[4], buf[5] > 252 ? buf[5]-4 : buf[5]+3);
         } else {
-            printf("Error reading WLAN MAC address from NV\n");
+            ALOGE("Error reading WLAN MAC address from NV\n");
         }
         fclose(f);
     } else {
-        printf("Error opening /persist/wlan_mac.bin\n");
+        ALOGE("Error opening /persist/wlan_mac.bin\n");
     }
 
     buf = NULL, i = -1;
@@ -50,11 +53,11 @@ int main() {
             fprintf(f, "%02hhx:%02hhx:%02hhx:%02hhx:%02hhx:%02hhx\n",
                     buf[5], buf[4], buf[3], buf[2], buf[1], buf[0]);
         } else {
-            printf("Error reading BT MAC address from NV\n");
+            ALOGE("Error reading BT MAC address from NV\n");
         }
         fclose(f);
     } else {
-        printf("Error opening /persist/bdaddr.txt\n");
+        ALOGE("Error opening /persist/bdaddr.txt\n");
     }
 
     return 0;
