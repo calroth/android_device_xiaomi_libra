@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2015 The Android Open-Source Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -162,6 +163,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     libhealthd.qcom
 
+# tcmiface for tcm support
+PRODUCT_PACKAGES += \
+    tcmiface
+
 # aqua boot helper
 PRODUCT_PACKAGES += \
     aqua
@@ -171,7 +176,8 @@ PRODUCT_PACKAGES += \
     gralloc.msm8992 \
     hwcomposer.msm8992 \
     memtrack.msm8992 \
-    lights.libra
+    lights.libra \
+    local_time.default
 
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -207,9 +213,18 @@ PRODUCT_PACKAGES += \
     rmnetcli \
     libxml2
 
-# GPS configuration
-PRODUCT_COPY_FILES += \
-    device/xiaomi/libra/gps.conf:system/etc/gps.conf
+# GPS - build our shim that wraps "gps.vendor.default.so"
+PRODUCT_PACKAGES += \
+    gps.libra
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.gps.qc_nlp_in_use=1 \
+    persist.loc.nlp_name=com.qualcomm.location \
+    ro.gps.agps_provider=1
+
+# For quipc_igsn & quipc_main
+PRODUCT_PACKAGES += \
+    libbson \
+    libcurl
 
 # Fingerprint Sensor
 PRODUCT_PACKAGES += \
@@ -255,7 +270,14 @@ PRODUCT_PACKAGES += \
 
 # Legacy blob symbols
 PRODUCT_PACKAGES += \
-    libshim_camera
+    libshim_camera \
+    libshim_binder \
+    libshim_c \
+    libshim_crypto \
+    libshim_gui \
+    libshim_ui \
+    libshim_utils \
+    libboringssl-compat
 
 PRODUCT_PACKAGES += \
     keystore.msm8992 \

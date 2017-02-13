@@ -1,5 +1,6 @@
 #
 # Copyright 2015 The Android Open Source Project
+# Copyright 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -153,5 +154,9 @@ $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld ; \
 
 # For creating rfs symbolic link in system partition
 include device/xiaomi/libra/tftp.mk
+
+# One more link for "slim_ap_daemon" which we're renaming to "slim_daemon"
+$(shell mkdir -p $(TARGET_OUT)/vendor/bin ; \
+	ln -sf /system/vendor/bin/slim_daemon $(TARGET_OUT)/vendor/bin/slim_ap_daemon)
 
 endif
